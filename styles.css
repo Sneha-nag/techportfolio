@@ -162,11 +162,11 @@ h1.script-title {
 }
 
 .portrait {
-  width: 132px;
-  height: 132px;
+  width: 220px;
+  height: 220px;
   flex: 0 0 auto;
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center 12%;
   border-radius: 50%;
   border: 1px solid var(--border-strong);
 }
@@ -498,8 +498,8 @@ li + li {
   }
 
   .portrait {
-    width: 88px;
-    height: 88px;
+    width: 148px;
+    height: 148px;
   }
 
   .identity h1.script-title {
