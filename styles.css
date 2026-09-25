@@ -145,6 +145,19 @@ h1 {
   color: var(--fg-bold);
 }
 
+h1.script-title {
+  font-family: "Lucida Handwriting", "Cedarville Cursive", cursive;
+  font-style: oblique 18deg;
+  font-synthesis: style;
+  font-weight: 400;
+  font-size: clamp(2.7rem, 6.5vw, 4.4rem);
+  line-height: 1.2;
+  letter-spacing: 0;
+  display: inline-block;
+  transform: skewX(-10deg);
+  transform-origin: left center;
+}
+
 .lede {
   max-width: 42rem;
   margin: 0;
@@ -212,8 +225,9 @@ h1 {
 
 .contact-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem 1.25rem;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  gap: 0.35rem 1.25rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -221,6 +235,11 @@ h1 {
   font-size: 0.78rem;
   letter-spacing: 0.02em;
   color: var(--fg-light);
+  white-space: nowrap;
+}
+
+.contact-row li {
+  white-space: nowrap;
 }
 
 .section-nav {
@@ -457,5 +476,11 @@ li + li {
 
   .nav {
     justify-content: flex-start;
+  }
+
+  .contact-row {
+    gap: 0.35rem 0.7rem;
+    font-size: 0.62rem;
+    letter-spacing: 0;
   }
 }
