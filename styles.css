@@ -146,16 +146,29 @@ h1 {
 }
 
 h1.script-title {
-  font-family: "Lucida Handwriting", "Cedarville Cursive", cursive;
-  font-style: oblique 18deg;
-  font-synthesis: style;
+  font-family: "Allura", "Lucida Handwriting", cursive;
+  font-style: normal;
   font-weight: 400;
-  font-size: clamp(2.7rem, 6.5vw, 4.4rem);
-  line-height: 1.2;
-  letter-spacing: 0;
-  display: inline-block;
-  transform: skewX(-10deg);
-  transform-origin: left center;
+  font-size: clamp(3.6rem, 8vw, 5.5rem);
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+}
+
+.identity {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1.15rem;
+}
+
+.portrait {
+  width: 132px;
+  height: 132px;
+  flex: 0 0 auto;
+  object-fit: cover;
+  object-position: center 18%;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
 }
 
 .lede {
@@ -482,5 +495,14 @@ li + li {
     gap: 0.35rem 0.7rem;
     font-size: 0.62rem;
     letter-spacing: 0;
+  }
+
+  .portrait {
+    width: 88px;
+    height: 88px;
+  }
+
+  .identity h1.script-title {
+    font-size: clamp(2.1rem, 8vw, 3rem);
   }
 }
