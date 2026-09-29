@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 980" width="1280" height="980" role="img" aria-labelledby="title desc">
+  <title id="title">CivicPocket architecture flow</title>
+  <desc id="desc">You use the Next.js website. Requests go to the FastAPI backend. The wizard matches a local catalog plus Grants.gov. The assistant strips identifiers then uses Vertex AI or local matching. Insights load remaining federal awards from USAspending and caseloads from NC OSBM LINC. Anonymous region, income bracket, and category events stay on disk or go to BigQuery.</desc>
+  <rect width="1280" height="980" fill="#efece6"/>
+  <text x="640" y="52" text-anchor="middle" font-family="Georgia, 'Iowan Old Style', serif" font-size="28" fill="#2c2118">How CivicPocket moves a request</text>
+  <text x="640" y="82" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" fill="#6b5744">Nothing on this path stores a name, SSN, address, email, or account number</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#3d2a1c"/>
+    </marker>
+  </defs>
+
+  <!-- You -->
+  <rect x="490" y="110" width="300" height="70" rx="16" fill="#3d2a1c"/>
+  <text x="640" y="140" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#f3ead8">You, in a web browser</text>
+  <text x="640" y="162" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#e8dcc4">Three questions, a chat, or Insights</text>
+  <line x1="640" y1="180" x2="640" y2="214" stroke="#3d2a1c" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Next.js -->
+  <rect x="160" y="220" width="960" height="150" rx="18" fill="#f7f5f1" stroke="#d4cfc6" stroke-width="1.5"/>
+  <text x="180" y="248" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#6b5340" letter-spacing="1.5">WEBSITE  NEXT.JS</text>
+  <text x="640" y="248" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#6b5744">Pages you see. /api calls are forwarded to Python.</text>
+
+  <rect x="190" y="270" width="200" height="72" rx="12" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="290" y="300" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#2c2118">Wizard</text>
+  <text x="290" y="322" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6b5744">Location � income � need</text>
+
+  <rect x="410" y="270" width="200" height="72" rx="12" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="510" y="300" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#2c2118">Assistant</text>
+  <text x="510" y="322" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6b5744">Plain-language question</text>
+
+  <rect x="630" y="270" width="200" height="72" rx="12" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="730" y="300" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#2c2118">Insights</text>
+  <text x="730" y="322" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6b5744">Usage + remaining dollars</text>
+
+  <rect x="850" y="270" width="240" height="72" rx="12" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="970" y="300" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#2c2118">Privacy</text>
+  <text x="970" y="322" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6b5744">What we never collect</text>
+
+  <line x1="640" y1="370" x2="640" y2="404" stroke="#3d2a1c" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- FastAPI -->
+  <rect x="160" y="410" width="960" height="88" rx="18" fill="#3d2a1c"/>
+  <text x="180" y="440" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#d4c4a0" letter-spacing="1.5">API  FASTAPI (PYTHON)</text>
+  <text x="640" y="472" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" fill="#f3ead8">/api/match    �    /api/assistant    �    /api/insights    �    /api/events</text>
+  <text x="640" y="492" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#c9bba3">Strips SSN, email, phone, street, and account-like numbers before any model call</text>
+
+  <!-- Three columns -->
+  <line x1="310" y1="498" x2="310" y2="538" stroke="#3d2a1c" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="640" y1="498" x2="640" y2="538" stroke="#3d2a1c" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="970" y1="498" x2="970" y2="538" stroke="#3d2a1c" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Match column -->
+  <rect x="160" y="544" width="300" height="250" rx="16" fill="#f7f5f1" stroke="#d4cfc6"/>
+  <text x="310" y="574" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#2c2118">Find programs</text>
+  <text x="310" y="596" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6b5744">Uses wizard answers only</text>
+  <rect x="180" y="614" width="260" height="48" rx="10" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="310" y="634" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#2c2118">Local catalog</text>
+  <text x="310" y="652" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#6b5744">NC, Mecklenburg, federal programs</text>
+  <rect x="180" y="674" width="260" height="48" rx="10" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="310" y="694" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#2c2118">Grants.gov</text>
+  <text x="310" y="712" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#6b5744">Live federal opportunities</text>
+  <text x="310" y="770" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6b5744">Returns apply links and deadlines</text>
+
+  <!-- Assistant column -->
+  <rect x="490" y="544" width="300" height="250" rx="16" fill="#f7f5f1" stroke="#d4cfc6"/>
+  <text x="640" y="574" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#2c2118">Ask in plain language</text>
+  <text x="640" y="596" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6b5744">Identifiers are removed first</text>
+  <rect x="510" y="614" width="260" height="48" rx="10" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="640" y="634" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#2c2118">Vertex AI (optional)</text>
+  <text x="640" y="652" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#6b5744">Gemini on Google Cloud, not AI Studio</text>
+  <rect x="510" y="674" width="260" height="48" rx="10" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="640" y="694" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#2c2118">Local matcher fallback</text>
+  <text x="640" y="712" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#6b5744">Works with no cloud project</text>
+  <text x="640" y="770" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6b5744">Training on user text is off</text>
+
+  <!-- Insights column -->
+  <rect x="820" y="544" width="300" height="250" rx="16" fill="#f7f5f1" stroke="#d4cfc6"/>
+  <text x="970" y="574" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#2c2118">Insights (not wizard filters)</text>
+  <text x="970" y="596" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6b5744">Statewide federal awards + usage</text>
+  <rect x="840" y="614" width="260" height="48" rx="10" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="970" y="634" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#2c2118">USAspending.gov</text>
+  <text x="970" y="652" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#6b5744">Top remaining NC federal awards</text>
+  <rect x="840" y="674" width="260" height="48" rx="10" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="970" y="694" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#2c2118">NC OSBM LINC</text>
+  <text x="970" y="712" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#6b5744">Mecklenburg caseload counts</text>
+  <text x="970" y="770" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6b5744">Independent of the first page</text>
+
+  <!-- Analytics -->
+  <line x1="640" y1="794" x2="640" y2="828" stroke="#3d2a1c" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="300" y="834" width="680" height="110" rx="16" fill="#f7f5f1" stroke="#d4cfc6"/>
+  <text x="640" y="864" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#2c2118">Anonymous usage only</text>
+  <text x="640" y="886" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#6b5744">Region, income bracket, category, and event type  never a user ID</text>
+  <rect x="340" y="900" width="250" height="28" rx="8" fill="#e4ddd4"/>
+  <text x="465" y="919" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#2c2118">Local JSONL file (default)</text>
+  <rect x="690" y="900" width="250" height="28" rx="8" fill="#dce8d8"/>
+  <text x="815" y="919" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#2d4a2a">BigQuery if the operator opts in</text>
+</svg>
