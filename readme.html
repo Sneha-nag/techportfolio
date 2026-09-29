@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>README · Sneha Nagabhairava</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Allura&family=JetBrains+Mono:wght@500&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="mark" href="index.html">SN</a>
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html">Resume</a>
+          <a href="projects.html" aria-current="page">Projects</a>
+          <a href="certifications.html">Certifications</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content" class="wrap">
+      <header class="hero">
+        <p class="kicker">Project documentation</p>
+        <h1 class="script-title" id="readme-title">README.md</h1>
+        <p class="lede" id="readme-status">Loading…</p>
+        <div class="actions">
+          <a class="button ghost" href="projects.html">Back to projects</a>
+        </div>
+      </header>
+      <article class="readme-body" id="readme-body"></article>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked@15.0.7/marked.min.js"></script>
+    <script>
+      const FILES = {
+        civicpocket: "assets/civicpocket-README.md",
+        "re-enterprise": "assets/re-enterprise-README.md",
+        peacefulplaces: "assets/peacefulplaces-README.md",
+        rootloop: "assets/rootloop-README.md",
+      };
+      const TITLES = {
+        civicpocket: "CivicPocket",
+        "re-enterprise": "RE Enterprise Architecture RAG",
+        peacefulplaces: "Peaceful Places",
+        rootloop: "Rootloop",
+      };
+      const key = new URLSearchParams(location.search).get("project") || "";
+      const src = FILES[key];
+      const title = document.getElementById("readme-title");
+      const status = document.getElementById("readme-status");
+      const body = document.getElementById("readme-body");
+      if (!src) {
+        status.textContent = "Choose a project README from the Projects page.";
+      } else {
+        title.textContent = TITLES[key] + " README.md";
+        fetch(src)
+          .then((response) => {
+            if (!response.ok) throw new Error("README not found");
+            return response.text();
+          })
+          .then((markdown) => {
+            status.hidden = true;
+            body.innerHTML = marked.parse(markdown);
+          })
+          .catch(() => {
+            status.textContent = "Could not load this README.";
+          });
+      }
+    </script>
+  </body>
+</html>

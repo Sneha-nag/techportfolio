@@ -401,6 +401,36 @@ li + li {
   margin-top: 1rem;
 }
 
+.readme-body {
+  padding-top: 1.5rem;
+  max-width: 46rem;
+}
+
+.readme-body h1,
+.readme-body h2,
+.readme-body h3 {
+  font-family: var(--font-display);
+  color: var(--fg-bold);
+}
+
+.readme-body pre,
+.readme-body code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+.readme-body pre {
+  overflow: auto;
+  padding: 0.9rem 1rem;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+}
+
+.readme-body img {
+  max-width: 100%;
+  height: auto;
+}
+
 .skill-card h3 {
   font-size: 0.95rem;
   margin-bottom: 0.35rem;

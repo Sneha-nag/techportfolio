@@ -50,7 +50,7 @@
           ecosystems with advanced machine learning, cloud computing, and agentic AI.
         </p>
         <ul class="contact-row">
-          <li><a href="mailto:sneha.nagabhairava@gmail.com">sneha.nagabhairava@gmail.com</a></li>
+          <li><span class="contact-email">sneha.nagabhairava@gmail.com</span></li>
           <li><a href="tel:+16517343610">(651) 734-3610</a></li>
           <li>
             <a href="https://www.linkedin.com/in/snehanagabhairava/" target="_blank" rel="noopener">LinkedIn</a>
@@ -61,8 +61,40 @@
         </ul>
         <div class="actions">
           <a class="button" href="projects.html">View projects</a>
+          <a class="button ghost" href="SNEHA-NAGABHAIRAVA.pdf" download="SNEHA-NAGABHAIRAVA.pdf" id="download-resume">Download PDF</a>
         </div>
       </header>
+
+      <section id="skills" aria-labelledby="skills-heading">
+        <p class="kicker">Technical expertise</p>
+        <h2 id="skills-heading">Skills</h2>
+        <div class="skill-grid">
+          <article class="skill-card">
+            <h3>Modern data stack</h3>
+            <p>Google Cloud Platform, AWS, Snowflake, dbt, Alteryx</p>
+          </article>
+          <article class="skill-card">
+            <h3>AI and machine learning</h3>
+            <p>Vertex AI, Amazon SageMaker, LLMs, machine learning, MLOps, LangChain, agentic AI, deep learning, data science</p>
+          </article>
+          <article class="skill-card">
+            <h3>BI and visualization</h3>
+            <p>Tableau (certified), Power BI, SAP BusinessObjects</p>
+          </article>
+          <article class="skill-card">
+            <h3>Databases</h3>
+            <p>Oracle (certified professional), Postgres, SQL Server, Sybase, NoSQL, ChromaDB, Redis, star/snowflake design</p>
+          </article>
+          <article class="skill-card">
+            <h3>Languages</h3>
+            <p>SQL, PL/SQL, Python, TypeScript, Node.js, Java (Sun certified)</p>
+          </article>
+          <article class="skill-card">
+            <h3>Tools and platforms</h3>
+            <p>Google Cloud Build, Docker, CI/CD pipelines, FastAPI, React, Informatica, Datameer, DBeaver, Toad, GitHub, Jira, Google Workspace, Microsoft 365</p>
+          </article>
+        </div>
+      </section>
 
       <section id="experience" aria-labelledby="experience-heading">
         <p class="kicker">Professional experience</p>
@@ -75,8 +107,8 @@
             <p class="place">Independent study and product builds</p>
             <ul>
               <li>Upskilled in machine learning and agentic AI: large language models, retrieval, tool-using agents, and deployment.</li>
+              <li>Built a real-estate enterprise RAG agent over Mecklenburg County tax and sales records with Python, LangGraph, Chroma, and Streamlit. The agent chooses SQL or document retrieval. Implemented a centralized Redis caching layer, optimizing repeat-query performance by 99.3% average latency reduction (p95 drop from 8.00s to 43ms) and eliminating redundant cloud API calls.</li>
               <li>Built CivicPocket, a public-assistance finder for Mecklenburg County, with Next.js, FastAPI, Vertex AI, and BigQuery. Common personal details are stripped before a question reaches the model.</li>
-              <li>Built a real-estate enterprise RAG agent over Mecklenburg County tax and sales records with Python, LangGraph, Chroma, and Streamlit. The agent chooses SQL or document retrieval.</li>
               <li>Built Peaceful Places, a Charlotte directory of calm places and community events, with Next.js, Express, and Gemini on Cloud Run.</li>
               <li>Built Rootloop, an on-device household habit tracker with React Native, Expo, and SQLite. The browser version keeps data on the device, with no cloud account.</li>
             </ul>
@@ -84,46 +116,33 @@
         </article>
 
         <article class="job">
-          <p class="when">Dec 2024 – May 2025<br />Eagan, MN</p>
-          <div>
-            <h3>Lead Software Engineer</h3>
-            <p class="place">Internet Brands (FindLaw acquisition)</p>
-            <ul>
-              <li>Led the technology transition after Internet Brands acquired FindLaw from Thomson Reuters.</li>
-              <li>Explored LLM-powered solutions to automate content categorization.</li>
-              <li>Ported customer data into the new corporate environment after the SAP account numbering system was restructured.</li>
-              <li>Updated 15+ downstream processes so operations continued under the new infrastructure.</li>
-              <li>Revised reporting frameworks to match Internet Brands business requirements and KPIs.</li>
-              <li>Kept service disruptions to customers minimal during the acquisition transition.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="job">
-          <p class="when">Jan 2012 – Dec 2024<br />Eagan, MN</p>
+          <p class="when">Jan 2012 – May 2025<br />Eagan, MN</p>
           <div>
             <h3>Lead Software Engineer</h3>
             <p class="place">Thomson Reuters</p>
             <div class="subgroup">
-              <h4>Performance Analytics Group · 2015 – Dec 2024</h4>
+              <h4>FindLaw — Performance Analytics Group · 2015 – May 2025</h4>
+              <p class="place">FindLaw was acquired by Internet Brands in Dec 2024.</p>
               <ul>
-                <li>Integrated AI-powered analytics to improve reporting and add predictive insight.</li>
-                <li>Cut dashboard development time by 65% by implementing dbt from scratch for a team of 8 analysts.</li>
-                <li>Built a Budget Estimator that uses machine learning to categorize Google Ads into practice areas.</li>
-                <li>Removed 15+ hours of weekly manual reporting with PPC budget and performance dashboards; received a company-wide Star Performer award.</li>
-                <li>Expanded digital marketing analytics coverage by 40% with a social media budget reporting solution for Facebook products, used by the marketing team.</li>
-                <li>Reduced data inconsistencies by 35% with standardized, certified Tableau data sources used by 20+ analysts.</li>
-                <li>Improved resource allocation efficiency by 25% with an article forecast reporting system for workload balancing.</li>
+                <li>Integrated AI-powered analytics to enhance data reporting capabilities and provide predictive insights.</li>
+                <li>Reduced dashboard development time by 65% by implementing dbt from scratch, establishing modular data transformation workflows used by a team of 8 analysts.</li>
+                <li>Created a Budget Estimator tool that uses machine learning models to categorize Google Ads into correct practice areas.</li>
+                <li>Eliminated 15+ hours of weekly manual reporting by designing PPC Budget and Performance Dashboards that resolved complex budgeting issues; received a company-wide Star Performer award.</li>
+                <li>Architected a social media budget reporting solution for Facebook products and an article forecast reporting system for workload balancing.</li>
+                <li>Decreased data inconsistencies by 35% by creating standardized, certified Tableau data sources used by 20+ analysts company-wide.</li>
+                <li>Led the technology transition following Internet Brands’ acquisition of FindLaw from Thomson Reuters by enabling seamless customer data porting and updating 15+ downstream processes after SAP account numbering was restructured.</li>
+                <li>Maintained operational continuity during the transition with minimal service disruptions to customers, and revised reporting frameworks to align with Internet Brands business requirements and KPIs.</li>
               </ul>
             </div>
             <div class="subgroup">
-              <h4>Data Services Group · 2012 – 2015</h4>
+              <h4>FindLaw — Data Services Group · 2012 – 2015</h4>
               <ul>
-                <li>Led the BPM fulfillment analytics team and raised offshore productivity by 28% through weekly leadership and clear implementation guidance.</li>
-                <li>Owned data modeling, mapping, and analysis for Oracle BPM reporting, vendor API content crowdsourcing, call quality, call scheduling, and product performance.</li>
-                <li>Served as SME for the Data Driven Decisions initiative and integrated FindLaw customer data with the Thomson Reuters master data management system.</li>
-                <li>Reduced query time through SQL optimization and data model improvements.</li>
-                <li>Implemented Business Objects universes and reports, and created training materials for the business and developers.</li>
+                <li>Headed the BPM fulfillment analytics team and increased offshore team productivity by 28% through structured weekly leadership meetings and clear implementation guidance.</li>
+                <li>Performed data modeling, mapping, and analysis for Oracle BPM reporting, vendor API content crowdsourcing, call quality, call scheduling, and product performance.</li>
+                <li>Integrated FindLaw customer data with the Thomson Reuters master data management system.</li>
+                <li>Reduced query execution time through SQL optimization and data model improvements.</li>
+                <li>Led technical book discussions on advanced analytics and created training materials for the business and developers.</li>
+                <li>Implemented several Business Objects universes and developed BO reports.</li>
               </ul>
             </div>
           </div>
@@ -135,11 +154,10 @@
             <h3>Senior Analyst / Oracle Software Engineer</h3>
             <p class="place">Ecologic Analytics</p>
             <ul>
-              <li>Designed security architecture, including Oracle VPD, for utility customer data.</li>
-              <li>Accelerated data processing by 70% by rewriting core processes with table partitioning and resolving production locking.</li>
-              <li>Configured the Meter Data Management System for major utilities and supported RFP responses.</li>
-              <li>Implemented MDMS on site at Pacific Gas and Electric, Austin Energy, and Indianapolis Power and Light.</li>
-              <li>Automated 90% of data migration with ETL frameworks for the Ecologic MDMS platform.</li>
+              <li>Enhanced data security protocols for utility customers by designing and implementing comprehensive security architecture, including Oracle VPD.</li>
+              <li>Accelerated data processing by 70% by rewriting core processes with table partitioning and resolving production locking issues.</li>
+              <li>Configured the Meter Data Management System for major utilities and supported RFP responses. Implemented MDMS on site at Pacific Gas and Electric, Austin Energy, and Indianapolis Power and Light.</li>
+              <li>Automated 90% of data migration processes by developing ETL frameworks for the Ecologic MDMS platform.</li>
             </ul>
           </div>
         </article>
@@ -150,10 +168,7 @@
             <h3>Database Administrator</h3>
             <p class="place">Wolters Kluwer Financial Services</p>
             <ul>
-              <li>Cut database errors by 50% by redesigning logical and physical data models for IRAMC in ERwin.</li>
-              <li>Reduced deployment failures by 65% by standardizing installation and upgrade scripts.</li>
-              <li>Cleared recurring production issues by optimizing SQL and resolving locking scenarios.</li>
-              <li>Cut the upgrade window by 50% with a tighter path from development to production.</li>
+              <li>IRAMC database management, build deployments, SQL query optimization, and migration.</li>
             </ul>
           </div>
         </article>
@@ -164,48 +179,14 @@
             <h3>Software Programmer</h3>
             <p class="place">Infrasoft Technologies</p>
             <ul>
-              <li>Generated reports for Coutts Bank with optimized Developer 2000 implementations.</li>
-              <li>Contributed to CMM Level 5 certification by building defect tracking that improved quality metrics by 35%.</li>
-              <li>Shortened support ticket resolution with an internal Support Hub application.</li>
-              <li>Built core database components for an electronic bill presentment and payment system used by financial institutions.</li>
+              <li>Reports for Coutts Bank, web frameworks, CMM Level 5 certification, and core database components.</li>
             </ul>
           </div>
         </article>
       </section>
 
-      <section id="skills" aria-labelledby="skills-heading">
-        <p class="kicker">Technical expertise</p>
-        <h2 id="skills-heading">Skills</h2>
-        <div class="skill-grid">
-          <article class="skill-card">
-            <h3>Modern data stack</h3>
-            <p>Snowflake, dbt, Python, Alteryx, AWS, Google Cloud Platform, Airflow, Docker</p>
-          </article>
-          <article class="skill-card">
-            <h3>AI and machine learning</h3>
-            <p>LLMs, agentic AI, machine learning, MLOps, data science, LangChain</p>
-          </article>
-          <article class="skill-card">
-            <h3>BI and visualization</h3>
-            <p>Tableau (certified), Power BI, SAP BusinessObjects</p>
-          </article>
-          <article class="skill-card">
-            <h3>Databases</h3>
-            <p>Oracle (certified professional), Postgres, SQL Server, Sybase, NoSQL, ChromaDB</p>
-          </article>
-          <article class="skill-card">
-            <h3>Languages</h3>
-            <p>SQL, PL/SQL, Python, Java (Sun certified)</p>
-          </article>
-          <article class="skill-card">
-            <h3>Tools</h3>
-            <p>Informatica, Datameer, DBeaver, Toad, GitHub, Jira, Google Workspace, Microsoft 365</p>
-          </article>
-        </div>
-      </section>
-
       <section id="education" aria-labelledby="education-heading">
-        <p class="kicker">Education and development</p>
+        <p class="kicker">Education</p>
         <h2 id="education-heading">Education</h2>
         <article class="job">
           <p class="when">Graduated 2001</p>
@@ -220,14 +201,6 @@
             <li><a href="certifications.html#tableau">Tableau Certified Developer</a></li>
             <li><a href="certifications.html#oracle">Oracle Database Administrator Certified Professional</a></li>
             <li><a href="certifications.html#java">Sun Certified Java Programmer</a></li>
-          </ul>
-        </div>
-        <div class="subgroup">
-          <h3>Professional development</h3>
-          <ul>
-            <li>Advanced Machine Learning: Agentic AI, ML, Deep Learning, and MLOps</li>
-            <li>The Analytics Edge — MITx on edX</li>
-            <li>LinkedIn courses on generative AI and leadership</li>
           </ul>
         </div>
       </section>
@@ -251,7 +224,7 @@
         <div>
           <h2>Connect</h2>
           <ul>
-            <li><a href="mailto:sneha.nagabhairava@gmail.com">Email</a></li>
+            <li>sneha.nagabhairava@gmail.com</li>
             <li><a href="https://www.linkedin.com/in/snehanagabhairava/" target="_blank" rel="noopener">LinkedIn</a></li>
             <li><a href="https://github.com/Sneha-nag" target="_blank" rel="noopener">GitHub</a></li>
           </ul>
@@ -261,5 +234,26 @@
         <p class="copyright">© 2026 Sneha Nagabhairava</p>
       </div>
     </footer>
+    <script>
+      document.getElementById("download-resume")?.addEventListener("click", async (event) => {
+        const link = event.currentTarget;
+        try {
+          event.preventDefault();
+          const response = await fetch(link.href);
+          if (!response.ok) throw new Error("Could not load PDF");
+          const blob = await response.blob();
+          const url = URL.createObjectURL(blob);
+          const save = document.createElement("a");
+          save.href = url;
+          save.download = link.getAttribute("download") || "SNEHA-NAGABHAIRAVA.pdf";
+          document.body.appendChild(save);
+          save.click();
+          save.remove();
+          URL.revokeObjectURL(url);
+        } catch (err) {
+          window.location.href = link.href;
+        }
+      });
+    </script>
   </body>
 </html>
