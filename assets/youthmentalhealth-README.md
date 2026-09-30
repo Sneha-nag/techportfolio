@@ -1,6 +1,8 @@
 # Youth mental health risk
 
-A machine learning app that estimates the chance a youth age 12–17 has ever been told they have depression, anxiety, or a behavior problem. The score comes from the 2024 National Survey of Children's Health. The live demo is a [Hugging Face Space](https://huggingface.co/spaces/Sneha-nag/youthmentalhealth). It is a survey model for explanation, not a clinical assessment.
+A machine learning app that estimates the chance a youth age 12–17 has ever been told they have depression, anxiety, or a behavior problem. The score comes from the 2024 National Survey of Children's Health. It is a survey model for explanation, not a clinical assessment.
+
+[Try me](https://huggingface.co/spaces/Sneha-nag/youthmentalhealth)
 
 ![How a score is produced](assets/youthmentalhealth-architecture.jpg)
 
@@ -75,8 +77,6 @@ Python 3.12. From the project root:
 pip install -r requirements.txt
 python -m app.gradio_app
 ```
-
-The UI is at [http://127.0.0.1:7860](http://127.0.0.1:7860).
 
 The API:
 
