@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 900" width="1280" height="900" role="img" aria-labelledby="title desc">
+  <title id="title">Youth mental health model architecture</title>
+  <desc id="desc">A browser form on a Hugging Face Space sends age, poverty, family structure, and adverse childhood experience answers to a saved XGBoost model. SHAP values are drawn as percentage points. The model was trained offline from the NSCH 2024 topical file, with MLflow tracking the run. FastAPI can serve the same model locally.</desc>
+  <rect width="1280" height="900" fill="#efece6"/>
+  <text x="640" y="48" text-anchor="middle" font-family="Georgia, 'Iowan Old Style', serif" font-size="28" fill="#2c2118">How a youth mental health score is produced</text>
+  <text x="640" y="76" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" fill="#6b5744">Survey model for ages 12-17. Not a clinical assessment.</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#3d2a1c"/>
+    </marker>
+  </defs>
+
+  <rect x="430" y="100" width="420" height="64" rx="16" fill="#3d2a1c"/>
+  <text x="640" y="128" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#f3ead8">You, in a web browser</text>
+  <text x="640" y="148" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#e8dcc4">Portfolio "Try it" opens the live demo</text>
+  <line x1="640" y1="164" x2="640" y2="196" stroke="#3d2a1c" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="140" y="202" width="1000" height="148" rx="18" fill="#f7f5f1" stroke="#d4cfc6" stroke-width="1.5"/>
+  <text x="160" y="230" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#6b5340" letter-spacing="1.4">LIVE DEMO - HUGGING FACE SPACES - GRADIO</text>
+  <rect x="168" y="250" width="220" height="72" rx="12" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="278" y="280" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#2c2118">Demographics</text>
+  <text x="278" y="302" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6b5744">Age 12-17 and poverty</text>
+  <rect x="408" y="250" width="220" height="72" rx="12" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="518" y="280" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#2c2118">Family</text>
+  <text x="518" y="302" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6b5744">Household type</text>
+  <rect x="648" y="250" width="220" height="72" rx="12" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="758" y="280" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#2c2118">ACE answers</text>
+  <text x="758" y="302" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6b5744">Yes, no, or missing</text>
+  <rect x="888" y="250" width="224" height="72" rx="12" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="1000" y="280" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#2c2118">Score card</text>
+  <text x="1000" y="302" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6b5744">Chance and waterfall</text>
+  <line x1="640" y1="350" x2="640" y2="382" stroke="#3d2a1c" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="140" y="388" width="1000" height="92" rx="18" fill="#3d2a1c"/>
+  <text x="160" y="418" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#d4c4a0" letter-spacing="1.4">MACHINE LEARNING - XGBOOST + SHAP</text>
+  <text x="640" y="446" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" fill="#f3ead8">Saved model returns a probability. SHAP steps become percentage points.</text>
+  <text x="640" y="468" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#c9bba3">Same model file serves the Space and the local FastAPI /predict and /explain routes</text>
+
+  <line x1="400" y1="480" x2="400" y2="520" stroke="#3d2a1c" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="880" y1="480" x2="880" y2="520" stroke="#3d2a1c" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="140" y="526" width="520" height="320" rx="16" fill="#f7f5f1" stroke="#d4cfc6"/>
+  <text x="400" y="558" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#2c2118">How the model was trained</text>
+  <text x="400" y="580" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6b5744">Offline. The raw survey file stays on disk.</text>
+  <rect x="168" y="598" width="464" height="52" rx="10" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="400" y="620" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#2c2118">NSCH 2024 topical SAS file</text>
+  <text x="400" y="638" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#6b5744">Local only. Too large for GitHub.</text>
+  <rect x="168" y="662" width="464" height="52" rx="10" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="400" y="684" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#2c2118">Ingest - ages 12-17</text>
+  <text x="400" y="702" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#6b5744">Parquet and CSV feature table</text>
+  <rect x="168" y="726" width="464" height="52" rx="10" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="400" y="748" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#2c2118">Train - MLflow</text>
+  <text x="400" y="766" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#6b5744">Weighted ROC-AUC, F1, and a SHAP plot</text>
+  <text x="400" y="822" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6b5744">Survey weight is used in training, never as a predictor</text>
+
+  <rect x="700" y="526" width="440" height="320" rx="16" fill="#f7f5f1" stroke="#d4cfc6"/>
+  <text x="920" y="558" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#2c2118">What gets served</text>
+  <text x="920" y="580" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6b5744">No new training when someone clicks Score</text>
+  <rect x="728" y="598" width="384" height="52" rx="10" fill="#dce8d8" stroke="#d4cfc6"/>
+  <text x="920" y="620" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#2d4a2a">models/xgb_youth_mh.json</text>
+  <text x="920" y="638" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#3d5c3a">Plus the feature sidecar</text>
+  <rect x="728" y="662" width="384" height="52" rx="10" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="920" y="684" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#2c2118">Hugging Face Space</text>
+  <text x="920" y="702" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#6b5744">Public Gradio app</text>
+  <rect x="728" y="726" width="384" height="52" rx="10" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="920" y="748" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#2c2118">FastAPI</text>
+  <text x="920" y="766" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="11" fill="#6b5744">Local /predict and /explain</text>
+  <text x="920" y="822" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6b5744">GitHub holds the code and the saved model</text>
+</svg>
