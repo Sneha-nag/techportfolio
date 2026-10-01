@@ -32,12 +32,14 @@ The public-use NSCH 2024 topical file has 51,375 children. Ingest keeps ages 12â
 
 Training is an 80/20 stratified split (`random_state=42`) with XGBoost and the raw survey weight as `sample_weight`. MLflow records the run. On the held-out test set the weighted ROC-AUC is 0.571 and the unweighted ROC-AUC is 0.590. Most scores stay below 50%, so F1 at a 0.5 threshold is low (weighted F1 0.141). Age and income do not move the score in one direction.
 
+The public page is Streamlit Community Cloud. Changing an answer rescores the saved model. It does not retrain. SHAP values are log-odds of the positive class. The waterfall applies them one at a time through the logistic function, so each bar is the change in percentage points from the average youth to this youth. The dashed line is that average. Blue lowers the chance. Red raises it. The card uses the percent it shows: under 20% is low, through 50% is moderate, and above 50% is high.
+
 ## Architecture
 
 ```mermaid
 flowchart TD
-  user[Browser] --> space[Hugging Face Space - Gradio]
-  space --> model[XGBoost model plus SHAP]
+  user[Browser] --> app[Streamlit Community Cloud]
+  app --> model[XGBoost model plus SHAP]
   model --> card[Risk card and percentage-point waterfall]
   sas[NSCH 2024 topical file] --> ingest[Ingest ages 12 to 17]
   ingest --> train[Train with MLflow]
@@ -52,7 +54,8 @@ The raw SAS file is about 179MB and is not in Git. Scoring uses `models/xgb_yout
 
 ```
 youthmentalhealth/
-  app/gradio_app.py          Hugging Face / local Gradio UI
+  streamlit_app.py           Public Streamlit app
+  app/gradio_app.py          Local Gradio UI
   src/data_pipeline/ingest.py
   src/models/train.py        XGBoost, MLflow, SHAP summary
   src/models/predict.py
@@ -65,7 +68,7 @@ youthmentalhealth/
 ## Technologies
 
 - **Machine learning:** XGBoost, scikit-learn, SHAP, MLflow
-- **Live demo:** Streamlit, Gradio
+- **Live demo:** Streamlit Community Cloud. Gradio is a local alternate.
 - **API:** FastAPI, uvicorn
 - **Data:** pandas, pyreadstat, Parquet
 
