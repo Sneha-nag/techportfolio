@@ -1,3 +1,22 @@
+<!--
+  Project index. Each card is hand-written HTML, not a generated list.
+  A card has a live link (Try me / Try it), a README link of the form
+  readme.html?project=KEY, and an architecture image under assets/.
+
+  Why hand-written cards: five projects, no database. Adding a project
+  means editing this file, readme.html's FILES map, and copying the
+  README and diagram into assets/. The code does not generate those
+  copies from the other repositories. If a live URL changes, only this
+  href and the README need to change; nothing redeploys the other app.
+
+  The h1 uses script-title (Allura). Project README titles do not.
+  If a linked README key is missing, readme.html shows a prompt instead
+  of a card. A dead live URL is a normal browser error; this page does
+  not health-check the demos.
+
+  Security: external demos use target=_blank and rel=noopener. There is
+  no form and no secret. Cost is the same GitHub Pages site as the resume.
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
