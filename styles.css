@@ -1,3 +1,16 @@
+/*
+  Shared look for the resume, projects, certifications, and README pages.
+  Three roles: Bricolage Grotesque for display headings, Newsreader for
+  body text, JetBrains Mono for navigation and buttons. Allura is the
+  script face used only by h1.script-title (the Projects and
+  Certifications headings, and the name on the resume). README titles
+  omit that class on purpose.
+
+  The code does not record a brand exercise that chose these faces.
+  Custom properties keep the palette in one place. A missing font
+  falls back to Helvetica, Georgia, or Consolas. There is no CSS build.
+  The 800px breakpoint stacks the project grid and shrinks the portrait.
+*/
 :root {
   --bg: #f2f1ec;
   --bg-raised: #fcfbf9;

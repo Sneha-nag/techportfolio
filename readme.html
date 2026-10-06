@@ -1,3 +1,26 @@
+<!--
+  One README viewer for every project. The Projects page links here with
+  ?project=KEY. This file maps that key to a markdown file in assets/
+  and to a title. The markdown is fetched and rendered in the browser
+  with marked.js from a CDN.
+
+  Why client-side markdown: GitHub Pages is static. A server-side render
+  is not available. Alternatives would be committing pre-rendered HTML
+  per project, or letting GitHub render the README on github.com. Those
+  were not used. The code does not record why marked was chosen over
+  another parser. Mermaid fences in the markdown are not rendered; they
+  stay as code. Architecture is a JPG in the markdown, not a live diagram.
+
+  Input: the query key. Output: a heading plus HTML from the markdown.
+  An unknown key, or a failed fetch, replaces the status line and leaves
+  the article empty. marked.parse writes innerHTML. The markdown files
+  are authored in this repo, so the XSS risk is the same as trusting
+  those files. A compromised CDN script would run on this page. The
+  code does not vendor marked.js. Cost is the CDN request plus Pages.
+
+  The title uses the normal h1 (Bricolage Grotesque), not the Allura
+  script font. Allura is not loaded on this page.
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -39,6 +62,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/marked@15.0.7/marked.min.js"></script>
     <script>
+      // Keys must match the ?project= values on the Projects page.
+      // A new project is invisible here until both maps and the markdown
+      // file exist. Titles are separate from the markdown H1 so the page
+      // heading can say "README.md" even when the file starts with a
+      // different heading.
       const FILES = {
         youthmentalhealth: "assets/youthmentalhealth-README.md",
         civicpocket: "assets/civicpocket-README.md",
