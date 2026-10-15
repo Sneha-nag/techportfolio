@@ -3,7 +3,7 @@
   A card has a live link (Try me / Try it), a README link of the form
   readme.html?project=KEY, and an architecture image under assets/.
 
-  Why hand-written cards: five projects, no database. Adding a project
+  Why hand-written cards: six projects, no database. Adding a project
   means editing this file, readme.html's FILES map, and copying the
   README and diagram into assets/. The code does not generate those
   copies from the other repositories. If a live URL changes, only this
@@ -25,7 +25,7 @@
     <title>Projects · Sneha Nagabhairava</title>
     <meta
       name="description"
-      content="Portfolio projects by Sneha Nagabhairava: a youth mental health model, Rootloop, CivicPocket, Peaceful Places, and an enterprise architecture RAG agent."
+      content="Portfolio projects by Sneha Nagabhairava: a youth mental health model, CivicPocket, an enterprise architecture RAG agent, FinanceBuddy, Peaceful Places, and Rootloop."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -52,10 +52,11 @@
       <header class="hero">
         <h1 class="script-title">Projects</h1>
         <p class="lede">
-          Five products built to practice applied AI: a youth mental health
-          model, public assistance, a county data agent, a household habit
-          tracker, and calm places in Charlotte. Try the live app, or open
-          README.md and architecture.jpg for each project.
+          Six products built to practice applied AI: a youth mental health
+          model, public assistance, a county data agent, a personal-finance
+          lakehouse, calm places in Charlotte, and a household habit tracker.
+          Try the live app, or open README.md and architecture.jpg for each
+          project.
         </p>
       </header>
 
@@ -123,6 +124,28 @@
               <a class="button" href="https://reenterprise-agentic-rag-pipeline-i93zfhqbz66drrsvsarxaf.streamlit.app/" target="_blank" rel="noopener">Try it</a>
               <a class="button ghost" href="readme.html?project=re-enterprise">README.md</a>
               <a class="button ghost" href="assets/re-enterprise-architecture.jpg" target="_blank" rel="noopener">architecture.jpg</a>
+            </div>
+          </article>
+
+          <article class="project-card" id="financebuddy">
+            <p class="kicker">Lakehouse · AWS · Streamlit</p>
+            <h3>FinanceBuddy</h3>
+            <p>
+              Synthetic personal-finance lakehouse: generate ledgers, transform
+              with dbt on DuckDB or Athena, score habits and fraud, and explore
+              gold marts in Streamlit. Optional Kinesis streaming and a Bedrock
+              Haiku coach that only cites numbers already in the marts.
+            </p>
+            <ul class="tags">
+              <li>dbt</li>
+              <li>S3 / Athena</li>
+              <li>Streamlit</li>
+              <li>Bedrock</li>
+            </ul>
+            <div class="actions">
+              <a class="button" href="https://github.com/Sneha-nag/financebuddy" target="_blank" rel="noopener">Code</a>
+              <a class="button ghost" href="readme.html?project=financebuddy">README.md</a>
+              <a class="button ghost" href="assets/financebuddy-architecture.jpg" target="_blank" rel="noopener">architecture.jpg</a>
             </div>
           </article>
 
