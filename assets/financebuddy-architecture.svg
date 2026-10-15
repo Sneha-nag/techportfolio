@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 900" width="1280" height="900" role="img" aria-labelledby="title desc">
+  <title id="title">FinanceBuddy architecture flow</title>
+  <desc id="desc">Synthetic data is generated into raw and bronze files, transformed with dbt on DuckDB or Athena, scored with ML into gold marts, served in Streamlit from local DuckDB or S3 gold, with optional Kinesis Firehose ingest and Bedrock coach.</desc>
+  <rect width="1280" height="900" fill="#efece6"/>
+  <text x="640" y="48" text-anchor="middle" font-family="Georgia, 'Iowan Old Style', serif" font-size="28" fill="#2c2118">How FinanceBuddy moves data</text>
+  <text x="640" y="78" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" fill="#6b5744">Synthetic lakehouse · dbt · ML · Streamlit · optional AWS</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#3d2a1c"/>
+    </marker>
+  </defs>
+
+  <!-- Ingest -->
+  <rect x="60" y="110" width="1160" height="150" rx="18" fill="#f7f5f1" stroke="#d4cfc6" stroke-width="1.5"/>
+  <text x="80" y="140" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#6b5340" letter-spacing="1.5">1 · INGEST</text>
+
+  <rect x="90" y="160" width="240" height="72" rx="12" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="210" y="190" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#2c2118">Python generator</text>
+  <text x="210" y="212" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6b5744">Users · txns · planted truth</text>
+
+  <rect x="360" y="160" width="200" height="72" rx="12" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="460" y="190" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#2c2118">raw / bronze</text>
+  <text x="460" y="212" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6b5744">CSV + Parquet</text>
+
+  <rect x="590" y="160" width="280" height="72" rx="12" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="730" y="190" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#2c2118">Kinesis ’ Firehose</text>
+  <text x="730" y="212" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6b5744">Optional stream ’ S3 raw</text>
+
+  <rect x="900" y="160" width="280" height="72" rx="12" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="1040" y="190" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#2c2118">S3 lake</text>
+  <text x="1040" y="212" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6b5744">bronze · gold · stream</text>
+
+  <!-- Transform -->
+  <rect x="60" y="290" width="1160" height="150" rx="18" fill="#f7f5f1" stroke="#d4cfc6" stroke-width="1.5"/>
+  <text x="80" y="320" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#6b5340" letter-spacing="1.5">2 · TRANSFORM</text>
+
+  <rect x="160" y="340" width="420" height="72" rx="12" fill="#3d2a1c"/>
+  <text x="370" y="370" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#f3ead8">DuckDB + dbt (local)</text>
+  <text x="370" y="392" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#e8dcc4">staging ’ intermediate ’ marts</text>
+
+  <rect x="700" y="340" width="420" height="72" rx="12" fill="#3d2a1c"/>
+  <text x="910" y="370" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#f3ead8">Athena + dbt (AWS)</text>
+  <text x="910" y="392" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#e8dcc4">Same project, --target athena</text>
+
+  <!-- Score -->
+  <rect x="60" y="470" width="1160" height="130" rx="18" fill="#f7f5f1" stroke="#d4cfc6" stroke-width="1.5"/>
+  <text x="80" y="500" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#6b5340" letter-spacing="1.5">3 · SCORE</text>
+
+  <rect x="120" y="520" width="220" height="56" rx="12" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="230" y="554" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#2c2118">Subscriptions</text>
+
+  <rect x="360" y="520" width="220" height="56" rx="12" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="470" y="554" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#2c2118">Habits</text>
+
+  <rect x="600" y="520" width="220" height="56" rx="12" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="710" y="554" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#2c2118">Fraud + reasons</text>
+
+  <rect x="840" y="520" width="300" height="56" rx="12" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="990" y="554" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#2c2118">Suggestions ’ gold</text>
+
+  <!-- Serve -->
+  <rect x="60" y="630" width="1160" height="220" rx="18" fill="#f7f5f1" stroke="#d4cfc6" stroke-width="1.5"/>
+  <text x="80" y="660" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#6b5340" letter-spacing="1.5">4 · SERVE</text>
+
+  <rect x="160" y="690" width="420" height="110" rx="16" fill="#3d2a1c"/>
+  <text x="370" y="730" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#f3ead8">Streamlit</text>
+  <text x="370" y="756" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#e8dcc4">backend = duckdb | s3 | athena</text>
+  <text x="370" y="778" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#c9bba3">S3 gold for the public demo</text>
+
+  <rect x="700" y="690" width="420" height="110" rx="16" fill="#efece6" stroke="#d4cfc6"/>
+  <text x="910" y="730" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#2c2118">Bedrock Haiku coach</text>
+  <text x="910" y="756" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#6b5744">Optional · capped marts JSON</text>
+  <text x="910" y="778" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="12" fill="#6b5744">Harness strips invented numbers</text>
+
+  <line x1="640" y1="260" x2="640" y2="290" stroke="#3d2a1c" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="640" y1="440" x2="640" y2="470" stroke="#3d2a1c" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="640" y1="600" x2="640" y2="630" stroke="#3d2a1c" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>
