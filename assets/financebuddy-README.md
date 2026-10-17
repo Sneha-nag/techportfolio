@@ -1,6 +1,6 @@
 # FinanceBuddy
 
-A personal-finance **lakehouse** learning project — not a bank product. Synthetic users and transactions (with planted duplicate subscriptions and fraud-ish bursts) land as files, get cleaned with **dbt**, scored with a bit of **ML**, and show up in a **Streamlit** UI. The same repo can stay on a laptop (**DuckDB**) or talk to **S3 / Athena**. Optional pieces: **Kinesis → Firehose** streaming into the lake, and a **Bedrock Haiku** coach tab that only explains numbers already in the marts.
+A personal-finance **lakehouse** learning project — not a bank product. Synthetic users and transactions (with planted duplicate subscriptions and fraud-ish bursts) land as files, get cleaned with **dbt** on **Athena**, scored with a bit of **ML**, and show up in a **Streamlit** UI on **S3** gold. Optional pieces: **Kinesis → Firehose** streaming into the lake, and a **Bedrock Haiku** coach tab that only explains numbers already in the marts.
 
 [Try out](https://financebuddy-tpvwauuuyscehgczyiapnt.streamlit.app/) (demo password is shown on the login screen)
 
